@@ -10,7 +10,7 @@ useSeoMeta({
   title: 'Login'
 })
 
-const toast = useToast()
+useToast()
 
 const fields = [{
   name: 'email',
@@ -54,18 +54,33 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <UAuthForm :fields="fields" :schema="schema" :providers="providers" title="Welcome back" icon="i-lucide-lock"
-    @submit="onSubmit">
+  <UAuthForm
+    :fields="fields"
+    :schema="schema"
+    :providers="providers"
+    title="Welcome back"
+    icon="i-lucide-lock"
+    @submit="onSubmit"
+  >
     <template #description>
-      Don't have an account? <ULink to="/signup" class="text-primary-500 font-medium">Sign up</ULink>.
+      Don't have an account? <ULink
+        to="/signup"
+        class="text-primary-500 font-medium"
+      >Sign up</ULink>.
     </template>
 
     <template #password-hint>
-      <ULink to="/" class="text-primary-500 font-medium">Forgot password?</ULink>
+      <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Forgot password?</ULink>
     </template>
 
     <template #footer>
-      By signing in, you agree to our <ULink to="/" class="text-primary-500 font-medium">Terms of Service</ULink>.
+      By signing in, you agree to our <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Terms of Service</ULink>.
     </template>
   </UAuthForm>
 </template>

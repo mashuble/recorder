@@ -32,6 +32,10 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  sourcemap: {
+    client: 'hidden'
+  },
+
   future: {
     compatibilityVersion: 4
   },
@@ -62,9 +66,5 @@ export default defineNuxtConfig({
       org: 'spotlightd',
       project: 'recorder'
     }
-  },
-
-  sourcemap: {
-    client: 'hidden'
   }
 })
