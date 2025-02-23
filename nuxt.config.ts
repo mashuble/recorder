@@ -10,8 +10,9 @@ export default defineNuxtConfig({
     '@nuxthub/core',
     'nuxt-auth-utils',
     '@pinia/nuxt',
-    '@pinia/colada-nuxt'
     // '@nuxtjs/i18n'
+    '@pinia/colada-nuxt',
+    '@sentry/nuxt/module'
   ],
 
   devtools: {
@@ -54,5 +55,16 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: 'spotlightd',
+      project: 'recorder'
+    }
+  },
+
+  sourcemap: {
+    client: 'hidden'
   }
 })
